@@ -1,0 +1,22 @@
+﻿<html>  
+  <head>   
+        <title>序数比例尺</title>  
+  </head> 
+  <body>
+	<script src="../d3.v4.min.js" charset="utf-8"></script> 
+		<h1>运行结果请在Chrome看Console</h1>
+	<script>  
+		var o = d3.scaleOrdinal()
+			            .domain([1, 2, 3, 4])
+			            .range([0, 100]);
+        var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+		console.log(o(1));
+      	console.log(o(2));
+	    console.log(o(3));
+        console.log(o(4));
+      	console.log(color(0));
+        console.log(color(1));
+	</script> 
+   </body>
+</html>

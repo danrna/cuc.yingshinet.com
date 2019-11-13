@@ -1,0 +1,43 @@
+﻿<html>
+  <head>
+    <title>基于D3的词云图</title>
+  </head>
+  <body>
+	<script src="../d3.v3.min.js"></script>
+	<script src="../d3.layout.cloud.js"></script>
+	<script>
+		 var fill = d3.scale.category20();		
+		 var words=[{text:"战狼2",size:57},{text:"速度与激情8",size:27},{text:"羞羞的铁拳",size:22},{text:"功夫瑜伽",size:18},
+		 {text:"西游伏妖篇",size:17},{text:"变形金刚5",size:16},{text:"摔跤吧！爸爸",size:13},{text:"芳华",size:13},
+		 {text:"寻梦环游记",size:12},{text:"加勒比海盗5",size:12}];
+		 var wc=d3.layout.cloud()
+				  .size([600, 400])
+				  .words(words)
+				  .padding(5)
+				  .rotate(function() { return ~~(Math.random() * 2) * 90; })
+				  .font("Impact")
+				  .fontSize(function(d) { return d.size; })
+				  .on("end", draw)
+				  .start();
+
+		  function draw(words) {
+			d3.select("body").append("svg")
+				.attr("width", 600)
+				.attr("height", 400)
+			  .append("g")
+				.attr("transform", "translate(300,200)")
+			  .selectAll("text")
+				.data(words)
+			  .enter().append("text")
+				.style("font-size", function(d) { return d.size + "px"; })
+				.style("font-family", "Impact")
+				.style("fill", function(d, i) { return fill(i); })
+				.attr("text-anchor", "middle")
+				.attr("transform", function(d) {
+				  return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+				})
+				.text(function(d) { return d.text; });
+		  }
+	</script>
+  </body>
+</html>

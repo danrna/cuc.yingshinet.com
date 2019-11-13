@@ -6,6 +6,7 @@
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
     "vuepress": "^1.2.0"
   },
   "scripts": {

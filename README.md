@@ -1,6 +1,21 @@
 # cuc.yingshinet.com
 
-- [ ] UI Advanced
+## Todo
 
-- [ ] 第一章
-- [x] 第二章
+- [x] UI Advanced
+- [x] Compatible Path with old <cuc.yingshinet.com>
+  - [x] iframe adjust
+- [x] Sidebar adjust
+  - [x] sidebarDepth: 3
+  - [x] collapsable: false
+- [x] PWA
+- [x] plugin
+  - [x] back-to-top
+- [x] Add Book link in home page
+- [x] Add logo in top-left menu
+- [x] Add Download & Other Links
+  - [x] LiMin GitHub
+- [x] Highlight Code
+- [x] adjust markdown to follow [chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines)
+- [ ] static page with jsp?
+- [ ] don't have work show folder

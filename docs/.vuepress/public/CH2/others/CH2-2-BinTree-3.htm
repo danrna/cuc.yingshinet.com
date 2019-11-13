@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>
+			标准分形二叉树
+		</title>
+	</head>
+	<body>
+		<svg id="wcSvg" width=1536 height=759 ></svg>
+		<script>
+			var w=window.innerWidth|| document.documentElement.clientWidth|| document.body.clientWidth;
+			var h=window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+
+			var mysvg = document.getElementById("wcSvg");
+			var length=300;
+			rate=0.6;
+			var x0=w/2;
+			var y0=h;
+			var count=12;
+			var iter=0;
+
+			function show(x0,y0,length,rate,a,count,sWidth){
+			        sWidth=sWidth*0.55;
+					var x1=x0;
+					var y1=y0;
+					var x2=x1+length*(0.55+0.4*Math.random())*Math.cos(a);
+					var y2=y1+length*(0.55+0.4*Math.random())*Math.sin(a);
+					svgline= document.createElement("line");
+					mysvg.appendChild(svgline);
+					iter++;
+					var rand=Math.random;
+					svgline.outerHTML="<line x1="+x1+" y1="+y1+" x2="+x2+" y2="+y2+" style='stroke:rgb(0,"+(((rand() * 64) +128) >>0)+",0);stroke-width:"+(sWidth)+"' />";
+					for(var i=0;i<2;i++){
+						var aL=a-Math.PI/4*(0.5+0.5*Math.random());
+						var aR=a+Math.PI/4*(0.5+0.5*Math.random());
+						if(count>0){
+							show(x2,y2,length*rate,rate,aL,count-1,sWidth);
+							show(x2,y2,length*rate,rate,aR,count-1,sWidth);
+						}
+					}
+			}
+			var sWidth=9;
+			show(x0,y0,length,rate,-Math.PI/2,count,sWidth);
+			show(x0,y0,length,rate,-Math.PI/2,count,sWidth);
+			show(x0,y0,length,rate,-Math.PI/2,count,sWidth);
+			show(x0,y0,length,rate,-Math.PI/2,count,sWidth);
+		</script>
+	</body>
+</html>

@@ -1,2 +1,6 @@
+.DS_*
+
+*.mp3
+
 node_modules
 yarn.lock

@@ -1,0 +1,45 @@
+﻿<html>
+<head><title>拟物树</title>
+<head>
+<body>
+<svg id="svgTree" width="1600" height="900"></svg>
+<script>
+
+var drawTree = function (ctx, startX, startY, length, depth, angle, branchWidth, angleFixed, color, ifDrawFlower) {
+    var defaultAngle = Math.PI / 2, defaultPercent = 0.1, direction = angle < 0 ? -1 : 1,
+        defaultTime = 50, rand = Math.random, defaultBranchesNumber = angleFixed ? 2 : 3 * Math.random() + 1,
+        newAngle, newLength, timing = angleFixed ? 10 : 20;
+    var endX = startX + length * Math.cos(angle),
+        endY = startY + length * Math.sin(angle);
+    var lineCap,lineWidth,strokeWidth;
+    if(--depth <= 0)
+        return true;
+    lineCap = "round";
+    lineWidth = branchWidth;
+    strokeStyle = color == null ? "rgb(0, " + (((rand() * 64) +128) >>0) + ",0)" : color;
+    var func = function(mStartX, mStartY, mEndX, mEndY){ 
+        var aLine = document.createElement("line");
+	ctx.appendChild(aLine);
+        aLine.outerHTML = "<line x1="+mStartX+" y1="+mStartY+" x2="+mEndX+" y2="+mEndY+" style='stroke:"+ strokeStyle +";stroke-width:"+lineWidth+"' />";
+    };  func(startX, startY, endX, endY);
+
+    branchWidth *= 0.55;
+    for(var i = 0; i < defaultBranchesNumber; i++){
+        newAngle = angleFixed ? i == 0 ? angle + defaultAngle / 3 : angle + defaultAngle / -3 : angle + defaultAngle * rand() - defaultAngle / 2;
+        newLength = angleFixed ? length * 0.7 : length * (rand() * 0.55 + 0.4);
+        if(depth == mDepth - 1 && !angleFixed)
+            newAngle = defaultAngle * direction * (rand() * 0.3 + 0.8);
+        setTimeout(function (funcAngle, funcLength) {
+            drawTree(ctx, endX, endY, funcLength, depth, funcAngle, branchWidth, angleFixed, color, ifDrawFlower);
+        }, timing, newAngle, newLength)
+    }
+};
+
+var svgTree = document.getElementById("svgTree");
+var mDepth = 12;
+setTimeout(function () {
+    drawTree(svgTree, 750, 700, 170, mDepth, Math.PI / -2, 9, false, null, true);
+}, 0);	
+</script>
+</body>
+</html>
