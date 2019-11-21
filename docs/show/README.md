@@ -12,7 +12,7 @@
 
 ### 3.NBA赔率展示
 
-<iframe src="http://cuc.yingshinet.com/CSSHOW/nba" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/nba/" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 4.LOL胜率分析
 
