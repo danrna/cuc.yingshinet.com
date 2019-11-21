@@ -13,6 +13,10 @@ module.exports = {
     smoothScroll: true,
     sidebar: [
       {
+        title: '《数据可视化原理与实例》',
+        path: 'http://product.dangdang.com/1290251610.html'
+      },
+      {
         title: '原理',   // 必要的
         collapsable: false,
         sidebarDepth: 3,

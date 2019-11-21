@@ -17,9 +17,9 @@
   - [x] LiMin GitHub
 - [x] Highlight Code
 - [x] adjust markdown to follow [chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines)
-- [ ] static page with jsp?
-- [ ] don't have work show folder
-- [ ] add book link in sidebar
+- [x] add book link in sidebar
 - [ ] add every chapter video course link
 - [x] add website pv & uv
-- [ ] deploy
+- [x] deploy to netlify
+  - [x] independent deploy (solve jsp & other links)
+  - [ ] CNAME

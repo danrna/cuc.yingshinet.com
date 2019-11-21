@@ -4,15 +4,15 @@
 
 ### 1.红楼梦
 
-<iframe src="/CSSHOW/redMansions/page/mainPage.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/redMansions/page/mainPage.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 2.CRH
 
-<iframe src="/CSSHOW/crh/index.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/crh/index.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 3.NBA赔率展示
 
-<iframe src="/CSSHOW/nba" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/nba" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 4.LOL胜率分析
 
@@ -30,27 +30,27 @@
 
 ### 1.作品1
 
-<iframe src="/CSSHOW/2016cs/1-AXY_CJH.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/2016cs/1-AXY_CJH.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 2.作品2
 
-<iframe src="/CSSHOW/2016cs/2-JH_GMC_XPJ.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/2016cs/2-JH_GMC_XPJ.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 3.作品3
 
-<iframe src="/CSSHOW/2016cs/3-JYH_WK.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/2016cs/3-JYH_WK.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 4.作品4
 
-<iframe src="/CSSHOW/2016cs/4-LJR_TH.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/2016cs/4-LJR_TH.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 5.作品5
 
-<iframe src="/CSSHOW/2016cs/5-WY_LBH.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/2016cs/5-WY_LBH.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ### 6.作品6
 
-<iframe src="/CSSHOW/2016cs/6-XH_LPY.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CSSHOW/2016cs/6-XH_LPY.html" scrolling="yes" frameborder="0" width="100%" height="800px"></iframe>
 
 ## viz3d - 三维数据可视化
 

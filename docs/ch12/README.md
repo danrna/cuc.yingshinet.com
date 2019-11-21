@@ -6,7 +6,8 @@
 
 ## 第二节 D3 词云图（JSP+MySQL）
 
-<iframe src="/CH12/english.jsp" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+<iframe src="http://cuc.yingshinet.com/CH12/english.jsp" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc103.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
 
 ## 第三节 基于 Python Jieba 的分词实例
 

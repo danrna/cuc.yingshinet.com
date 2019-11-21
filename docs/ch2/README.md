@@ -2,6 +2,8 @@
 
 ## 第一节 直方图
 
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc22.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+
 ### 1.屏幕分辨率
 
 <iframe src="/CH2/Screen.htm" scrolling="yes" frameborder="0" width="100%" height="300px"></iframe>
@@ -39,6 +41,7 @@
 ### 1.二叉树到文字树
 
 <iframe src="/CH2/TextTree.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc21.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
 
 ### 2.文字旋转比较
 

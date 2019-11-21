@@ -14,6 +14,10 @@ Hello World
 
 <iframe src="/ch3/D3RectHist.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
 
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc31.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+
 ### 2.D3直方图添加文字
 
 <iframe src="/ch3/D3RectHist+.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc32.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>

@@ -4,9 +4,13 @@
 
 <iframe src="/CH4/arcDonut.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
 
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc41.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+
 ### 1.Path绘制三角形
 
 <iframe src="/CH4/Path.htm" scrolling="yes" frameborder="0" width="100%" height="500px"></iframe>
+
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc42.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
 
 ### 2.Path绘制圆弧
 
@@ -22,13 +26,19 @@
 
 ## 第二节 从原生数据到绘制饼图
 
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc44.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+
 ### 1.饼图
 
 <iframe src="/CH4/D3Pie.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
 
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc43.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+
 ### 2.配有文字说明的交互饼图
 
 <iframe src="/CH4/D3PieOK.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+
+<iframe src="http://cuc.yingshinet.com/MOOC/htm/mooc45.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
 
 ### 3.交互环图
 
