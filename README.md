@@ -18,7 +18,7 @@
 - [x] Highlight Code
 - [x] adjust markdown to follow [chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines)
 - [x] add book link in sidebar
-- [ ] add every chapter video course link
+- [x] add every chapter video course link
 - [x] add website pv & uv
 - [x] deploy to netlify
   - [x] independent deploy (solve jsp & other links)
