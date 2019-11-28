@@ -12,6 +12,9 @@ module.exports = {
   themeConfig: {
     logo: '/logo.png',
     smoothScroll: true,
+    nav: [
+      { text: '中国大学MOOC', link: 'https://www.icourse163.org/course/CUC-1206407806' }
+    ],
     sidebar: [
       {
         title: '《数据可视化原理与实例》',
@@ -42,7 +45,20 @@ module.exports = {
         collapsable: false,
         children: [
           ['/show/', '作品展示'],
-          ['/course/', '视频课程'],
+          {
+            title: '视频课程',
+            path: '/course/',
+            children: [
+              ['/course/CH1.html', 'CH1'],
+              ['/course/CH2.html', 'CH2'],
+              ['/course/CH3.html', 'CH3'],
+              ['/course/CH4.html', 'CH4'],
+              ['/course/CH7.html', 'CH7'],
+              ['/course/CH8.html', 'CH8'],
+              ['/course/CH10.html', 'CH10'],
+              ['/course/Flask.html', 'Flask']
+            ]
+          },
           ['/demo/', 'Demo 下载']
         ]
       }

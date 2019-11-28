@@ -23,3 +23,7 @@
 - [x] deploy to netlify
   - [x] independent deploy (solve jsp & other links)
   - [ ] CNAME
+- [ ] seperate video pages
+  - [x] separate video chapter pages
+  - [ ] seperate video section pages
+- [ ] secure with https
