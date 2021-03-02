@@ -6,10 +6,11 @@
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.2.0",
-    "vuepress": "^1.2.0"
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "vuepress": "^1.8.2"
   },
   "scripts": {
+    "dev": "yarn docs:dev",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   }
