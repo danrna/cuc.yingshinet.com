@@ -6,8 +6,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      VUEPRESS_BASE: "/cuc.yingshinet.com/"
     steps:
       - uses: actions/checkout@v2
 
