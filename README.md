@@ -7,10 +7,6 @@
 
 ## Deploy
 
-```sh
-cp .env.example .env
-```
-
 ### Build
 
 ```sh
