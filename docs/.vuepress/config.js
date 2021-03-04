@@ -1,4 +1,5 @@
 module.exports = {
+  base: process.env.VUEPRESS_BASE || "/",
   title: "数据可视化原理与实例",
   description: "数据之美",
   head: [

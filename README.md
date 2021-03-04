@@ -1,5 +1,18 @@
 # cuc.yingshinet.com
 
+## Deploy
+
+```sh
+cp .env.example .env
+```
+
+### Build
+
+```sh
+yarn build
+# docs/.vuepress/dist
+```
+
 ## Todo
 
 - [x] UI Advanced

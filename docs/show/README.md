@@ -25,4 +25,4 @@
 
 ## viz3d - 三维数据可视化
 
-<https://mesmerxx.github.io/docs/>
+<https://mlemoe.github.io/docs/>

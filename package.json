@@ -2,7 +2,7 @@
   "name": "cuc.yingshinet.com",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/YunYouJun/cuc.yingshinet.com",
+  "repository": "https://github.com/CBD-Lab/cuc.yingshinet.com",
   "author": "YunYouJun <me@yunyoujun.cn>",
   "license": "MIT",
   "devDependencies": {
@@ -10,6 +10,7 @@
     "vuepress": "^1.8.2"
   },
   "scripts": {
+    "build": "yarn docs:build",
     "dev": "yarn docs:dev",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"

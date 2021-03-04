@@ -6,15 +6,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      VUEPRESS_BASE: "/cuc.yingshinet.com/"
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: "12.x"
+          node-version: "14.x"
       - run: yarn
-      - run: yarn docs:build
+      - run: yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

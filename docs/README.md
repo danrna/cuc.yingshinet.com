@@ -8,8 +8,6 @@ actionLink: /guide/
 footer: Copyright © 2018-2020 RoseLee ｜ LCF1974@126.com
 ---
 
-
-
 <p style="text-align:center">
   <a href="https://www.icourse163.org/course/CUC-1206407806" target="_blank">
     中国大学 MOOC - 数据可视化
