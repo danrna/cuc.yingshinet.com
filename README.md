@@ -1,5 +1,10 @@
 # cuc.yingshinet.com
 
+[![docs](https://github.com/CBD-Lab/cuc.yingshinet.com/actions/workflows/docs.yml/badge.svg)](https://github.com/CBD-Lab/cuc.yingshinet.com/actions/workflows/docs.yml)
+
+- Github Pages: <https://cbd-lab.github.io/cuc.yingshinet.com/>
+- Server: <http://cuc.yingshinet.com>
+
 ## Deploy
 
 ```sh
@@ -11,6 +16,13 @@ cp .env.example .env
 ```sh
 yarn build
 # docs/.vuepress/dist
+```
+
+### Dev
+
+```sh
+yarn dev
+# http://localhost:8080/
 ```
 
 ## Todo
@@ -40,3 +52,9 @@ yarn build
   - [x] separate video chapter pages
   - [ ] seperate video section pages
 - [ ] secure with https
+
+## FAQ
+
+### Why not https?
+
+You know, some http resources left over from history.

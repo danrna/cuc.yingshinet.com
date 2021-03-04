@@ -16,6 +16,9 @@ module.exports = {
   themeConfig: {
     logo: "/logo.png",
     smoothScroll: true,
+    repo: "cbd-lab/cuc.yingshinet.com",
+    editLinks: true,
+    editLinkText: "帮助我们改善此页面！",
     nav: [
       {
         text: "原理",
