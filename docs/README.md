@@ -13,7 +13,7 @@ footer: Copyright © 2018-2020 RoseLee ｜ LCF1974@126.com
     中国大学 MOOC - 数据可视化
   </a>
   <br/>
-  <a href="http://product.dangdang.com/1290251610.html" target="_blank">
+  <a href="https://item.jd.com/12467892.html" target="_blank">
     <img src="/book.jpg" height="200">
   </a>
   <img src="/img/qrcode-cuc.png" height="200">

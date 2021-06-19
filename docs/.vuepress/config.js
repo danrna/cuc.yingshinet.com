@@ -36,7 +36,7 @@ module.exports = {
     sidebar: [
       {
         title: "《数据可视化原理与实例》",
-        path: "http://product.dangdang.com/1290251610.html",
+        path: "https://item.jd.com/12467892.html",
       },
       {
         title: "原理", // 必要的
