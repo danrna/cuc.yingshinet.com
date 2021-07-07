@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>canvas { width: 100%; height: 100% }</style>
+    <script src="js/three.js"></script>
+	<script src="js/OrbitControls.js"></script>
+</head>
+<body>
+	<div id="canvas-frame"></div>
+    <script>
+	    var threeDiv = document.getElementById( 'canvas-frame' );
+        var scene = new THREE.Scene();
+        
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000);
+        
+        var renderer = new THREE.WebGLRenderer();//WebGLRenderer( {antialias: true, alpha: true} );
+		//renderer.setClearColor( 0xffffff, 0 );
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+		threeDiv.appendChild(renderer.domElement);
+
+		// 球体网格模型
+		var geometry = new THREE.SphereGeometry(100, 50, 50);
+
+		var material = new THREE.MeshPhongMaterial({
+				//wireframe: true,
+				color: 0xFFFFFF,
+				opacity:0.5,
+                map:         getTexture('texture/earth/2_no_clouds_4k.jpg'),
+				//map:         getTexture('texture/earth/earth_clouds_2048.png'),
+				//map:         getTexture('texture/earth/hong.jpg'),
+				//map:         getTexture('texture/earth/galaxy.png'),
+                //bumpMap:     getTexture('texture/earth/elev_bump_4k.jpg'),//凹凸贴图
+                transparent: true,
+                emissiveIntensity: 0.05,
+                //alphaMap:    getTexture('texture/earth/grey.jpg'),//透明度贴图，黑色：完全透明;白色：完全不透明
+				
+            });
+
+	    //纹路加载函数
+        function getTexture(str){//str为纹理url
+            var loader = new THREE.TextureLoader();
+            return loader.load(str);
+        }
+
+
+		var sphere = new THREE.Mesh(geometry, material); //网格模型对象Mesh
+		//sphere.translateX(-100); //球体网格模型沿Y轴正方向平移120
+		scene.add(sphere);
+
+
+        camera.position.z =400;
+		camera.position.x =30;
+		camera.position.y =100;
+
+		var ambient = new THREE.AmbientLight(0xFFFFFF);
+		scene.add(ambient);
+
+        creatAero(101);
+                //大气层
+        function creatAero(radius){
+            var cloudsGeo = new THREE.SphereGeometry(radius,radius/2,radius/2);
+            var cloudsMater = new THREE.MeshPhongMaterial({map:getTexture('texture/earth/earth_clouds_2048.png'),transparent:true,opacity:1});
+            var cloudsMesh = new THREE.Mesh(cloudsGeo,cloudsMater);
+            scene.add(cloudsMesh);
+        }
+
+        var orbitControls = new THREE.OrbitControls(camera, threeDiv);
+        orbitControls.target = sphere.position;//控制焦点
+        orbitControls.autoRotate = true;//自动旋转
+        scene.controls = orbitControls;
+
+		render();
+		function render()
+        {
+            scene.controls.update();
+            //object_selection.render(group, scene.userData.camera);
+            renderer.render(scene, camera);
+            requestAnimationFrame(render);
+        }	
+		//renderer.render(scene, camera);
+    </script>
+</body>
+</html>

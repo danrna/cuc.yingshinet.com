@@ -10,7 +10,9 @@
 			var cxt=c.getContext("2d");
 			var img=new Image()
 			img.src="flowerS.jpg"
-			cxt.drawImage(img,0,0);
+			img.onload = function () {
+				cxt.drawImage(img, 0, 0);
+			}
 			var imageData = cxt.getImageData(0,0,c.width, c.height);
 			var data = imageData.data;
 			//dataMatrix

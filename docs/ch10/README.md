@@ -26,7 +26,7 @@
 
 ### 3.图像二值化
 
-<iframe src="/CH10/imageGray.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+<iframe src="/CH10/imageBinary.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
 
 ## 第三节 Canvas复杂图像处理
 
@@ -41,3 +41,7 @@
 ### 3.图像锐化
 
 <iframe src="/CH10/imageSharpen.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>
+
+## 第四节 基于K-means聚类的色彩提取
+
+<iframe src="/CH10/colorKmeans.htm" scrolling="yes" frameborder="0" width="100%" height="600px"></iframe>

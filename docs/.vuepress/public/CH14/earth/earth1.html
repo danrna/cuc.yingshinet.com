@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>earth</title>
+	<meta charset = "utf-8">
+    <style>
+        html{
+            overflow:hidden;
+        }
+        #canvas-frame {
+            position:absolute;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-frame"></div>
+	<script src="js/three.js" ></script>
+    <script src="js/OrbitControls.js" ></script>
+	
+	<script type="text/javascript">
+        //渲染区域 
+        var threeDiv = document.getElementById( 'canvas-frame' );
+        var width = threeDiv.clientWidth;
+        var height = threeDiv.clientHeight;
+
+        //渲染器
+        var renderer = new THREE.WebGLRenderer( {antialias: true, alpha: true} );//
+        renderer.setClearColor( 0xffffff, 0 );
+        renderer.setSize(width, height);
+        threeDiv.appendChild(renderer.domElement);//在Div里生成一个canvas
+
+        //场景
+        var scene = new THREE.Scene();
+
+        //相机
+        var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 10000);
+        camera.position.set(0, 100, 350);
+        scene.add(camera);
+
+        //光源
+        var light = new THREE.DirectionalLight(0xffffff, 1.0, 0);//平行光
+        light.position.set(-100, 500, 200);
+        scene.add(light);
+
+        var aLight = new THREE.AmbientLight( 0x666666 );//环境光
+        scene.add( aLight );
+
+        //控制器
+        var orbitControls = new THREE.OrbitControls(camera, threeDiv);
+        orbitControls.autoRotate = true;//自动旋转
+		
+		render();//启动渲染
+        function render()
+        {
+            orbitControls.update();
+            renderer.render(scene, camera);
+            requestAnimationFrame(render);
+        }
+		
+		initSphere();
+		function initSphere(){
+			var geometry = new THREE.SphereGeometry( 100, 32, 32 );
+			var material = new THREE.MeshPhongMaterial({
+				//wireframe: true,
+				//color: 0xff0000,
+                map:         getTexture('texture/earth/2_no_clouds_4k.jpg'),
+                bumpMap:     getTexture('texture/earth/elev_bump_4k.jpg'),//凹凸贴图
+                //transparent: true,
+                emissiveIntensity: 0.05,
+                alphaMap:    getTexture('texture/earth/grey.jpg'),//透明度贴图，黑色：完全透明;白色：完全不透明
+            });
+
+            var mesh = new THREE.Mesh( geometry, material );
+            mesh.rotation.y += Math.PI*15.22/10;//从北极往南极望是顺时针旋转，手动调整本初子午线与y0z平面的误差
+            scene.add(mesh);
+		}
+		
+		creatAero(101);
+		//大气层
+        function creatAero(radius){
+            var cloudsGeo = new THREE.SphereGeometry(radius,radius/2,radius/2);
+            var cloudsMater = new THREE.MeshPhongMaterial({map:getTexture('texture/earth/earth_clouds_2048.png'),transparent:true});
+            var cloudsMesh = new THREE.Mesh(cloudsGeo,cloudsMater);
+            scene.add(cloudsMesh);
+        }
+		
+		//纹路加载函数
+        function getTexture(str){//str为纹理url
+            var loader = new THREE.TextureLoader();
+            return loader.load(str);
+        }
+		
+		createLink();
+		function createLink(){
+			var locations = [
+                    {
+                        name: '中国',
+                        position: {x: 75.00796918081518, y: 61.91934379181622,z: -28.073357639817498},
+                    }, {
+                        name: '英国',
+                        position: {x: -0, y: 80.19051430548129, z: 57.366479276535955},
+                    }];
+					
+			var firstSprite;//中国
+            for(let i in locations){
+                var sprite = createLocationSprite(locations[i].position);
+                scene.add( sprite );
+
+                var textSprite = createText(locations[i].position, locations[i].name);
+                scene.add( textSprite );
+
+                if(i == 0){
+                    firstSprite = sprite;
+                }
+                else{
+                    createLine(firstSprite, sprite);
+                }
+            }
+		}
+		
+		function createLocationSprite(position){
+			var spriteMaterial = new THREE.SpriteMaterial({
+                map: getTexture('texture/sprite/snowflake7_alpha.png'),
+            });
+            var sprite = new THREE.Sprite(spriteMaterial);
+
+            sprite.position.set(position.x*1.03, position.y*1.03, position.z*1.03);
+            sprite.scale.set(5,5,5);
+
+            return sprite
+		}
+
+        function createText(position, title){
+            let canvas = document.createElement("canvas");
+            canvas.width = 512;
+            canvas.height = 512;
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#000000";
+            ctx.font = "40px Yahei";
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(title, 256, 256, 512);
+
+            let spriteMap = new THREE.CanvasTexture(canvas);
+            spriteMap.needsUpdate = true;
+            let spriteMaterial = new THREE.SpriteMaterial({map: spriteMap});
+
+            let sprite = new THREE.Sprite(spriteMaterial);
+            sprite.scale.set(30, 30, 1);
+            
+            sprite.position.copy(position).multiplyScalar(1.05);
+            return sprite
+        }
+
+        function createLine(obj0, obj1, radius){
+            var positions = [];
+            positions.push(obj0.position);
+
+            var midVector = obj0.position.clone().add(obj1.position.clone());
+            if(midVector.length () > radius*1.5){
+                midVector.multiplyScalar(0.8);
+            }
+            positions.push(midVector);
+            
+            positions.push(obj1.position);
+            
+            var curve = new THREE.CatmullRomCurve3( positions );//Create a smooth 3d spline curve from a series of points
+            //https://threejs.org/docs/#api/en/extras/curves/CatmullRomCurve3
+
+            lightMove(curve);
+
+            var points = curve.getPoints( 50 );//从曲线中取出position，细分数为20
+            var geometry = new THREE.BufferGeometry().setFromPoints( points );
+
+            var material = new THREE.LineBasicMaterial( { color : 0x2376DD } );
+            var curveObject = new THREE.Line( geometry, material );
+            scene.add(curveObject);
+        }
+
+        function lightMove(curve){
+            var that = this;
+            var pointGeometry = new THREE.SphereGeometry(1, 20, 20);
+            var pointMaterial = new THREE.MeshBasicMaterial({color: 0xFFCF71});
+
+            addLightPoint();
+            function addLightPoint() {
+                var index = 0;
+                var pointMesh = new THREE.Mesh(pointGeometry, pointMaterial);
+
+                pointMesh.position.copy(curve.getPointAt(index));
+                that.scene.add(pointMesh);
+
+                function pointAnimate() {
+                    index+=0.001;
+                    if(index>= 1) {
+                        index = 0;
+                    }
+                    pointMesh.position.copy(curve.getPointAt(index));
+                    requestAnimationFrame(pointAnimate);
+                }
+                pointAnimate();
+            }
+
+        }
+	</script>
+</body>
+</html>
