@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>minimal demo</title>
+		<style>
+		body {
+		  background-color: #FFF; /* example... */
+		}
+		</style>
+	 
+		<!-- import convnetjs library -->
+		<script src="convnet-min.js"></script>
+	 
+		<!-- javascript goes here -->
+		<script type="text/javascript">
+		 
+		function periodic() {
+		  var d = document.getElementById('egdiv');
+		  d.innerHTML = 'Random number: ' + Math.random()
+		}
+		 
+		var net; // declared outside -> global variable in window scope
+		function start() {
+
+		  net = new convnetjs.Net();
+		  // example of running something every 1 second
+		  setInterval(periodic, 1000);
+		}
+		 
+		</script>
+	</head>
+ 
+	<body onload="start()">
+		<div id="egdiv"></div>
+	</body>
+</html>

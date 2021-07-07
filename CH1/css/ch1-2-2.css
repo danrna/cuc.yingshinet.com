@@ -1,0 +1,16 @@
+body{
+	background-color:DarkSeaGreen
+}
+h1{
+	color:#556B2F
+}
+#poet_title{
+	font-family:华文行楷;
+	color:Purple;
+	font-size:20px;
+}
+.poet{
+    font-family:华文隶书;
+	color:Purple;
+	font-size:20px;
+}
